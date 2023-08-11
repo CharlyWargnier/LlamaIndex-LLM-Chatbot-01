@@ -7,8 +7,8 @@ from streamlit_image_select import image_select
 import time
 from streamlit_pills import pills
 
-#import nltk
-#nltk.download('punkt')
+import nltk
+nltk.download('punkt')
 
 # Streamlit app layout
 st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis")
