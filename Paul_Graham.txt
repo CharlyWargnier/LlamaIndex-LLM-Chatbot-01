@@ -1,0 +1,141 @@
+﻿{{short description|English programmer, venture capitalist, and essayist}}
+{{Use dmy dates|date=March 2021}}
+{{Infobox scientist
+| honorific_prefix  = 
+| name              = Paul Graham
+| image             = paulgraham 240x320.jpg
+| alt               =
+| caption           = Paul Graham
+| birth_date        = {{birth date and age|1964|11|13}}<ref>{{Cite web|url=https://twitter.com/paulg/status/1613932520105725952}}</ref>
+| birth_place       =  [[Weymouth, Dorset]], England<ref>{{cite web |url=http://news.ycombinator.com/item?id=324331 |title=No; I was born in Weymouth, England. My father's Welsh though. |date=2008-10-05 |website=Hacker News |publisher=Ycombinator |access-date=2020-04-08}}</ref>
+| death_date        = <!-- {{Death date and age|df=yes|20yy|mm|dd|1964|11|13}} (death date then birth date) -->
+| death_place       =
+| citizenship       = British<br/>American
+| fields            = [[Computer science]]
+| workplaces        =
+| education         = [[Gateway High School (Pennsylvania)|Gateway High School]]
+| alma_mater        = [[Cornell University]] (BA)<br/>[[Harvard University]] (MS, PhD)
+| thesis_title      = The State of a Program and Its Uses
+| thesis_url        = http://id.lib.harvard.edu/aleph/002211322/catalog
+| thesis_year       = 1990
+| doctoral_advisor  = Thomas E. Cheatham Jr.
+| academic_advisors =
+| doctoral_students =
+| notable_students  =
+| known_for         = [[Viaweb]]<br>[[Y Combinator]]<br>[[Hacker News]]<br>''[[Hackers & Painters]]''
+| influences        =
+| influenced        =
+| awards            =
+| signature         = <!-- Filename only -->
+| signature_alt     =
+| website           = {{Official URL}}
+| footnotes         =
+| spouse            = [[Jessica Livingston]] (m. 2008)
+}}
+'''Paul Graham''' ({{IPAc-en|g|r|æ|m}}; born 1964)<ref name="DOB LibCongress">{{cite web |title= Graham, Paul 1964- Authorities & Vocabularies (Library of Congress Name Authority File) |url= http://id.loc.gov/authorities/names/no2005023870.html |publisher= U.S. Library of Congress |date=11 March 2005 |quote= (Paul Graham, b. Nov. 13, 1964) |access-date=12 March 2012}}</ref> is an English [[computer scientist]], essayist, entrepreneur, [[venture capital]]ist, and author. He is best known for his work on the programming language [[Lisp (programming language)|Lisp]], his former startup [[Viaweb]] (later renamed ''Yahoo! Store''), cofounding the influential [[startup accelerator]] and seed capital firm [[Y Combinator]], his essays, and [[Hacker News]]. He is the author of several computer programming books, including: ''[[On Lisp]]'',<ref name="onlisp">{{cite book |last=Graham |first=Paul |title=On Lisp: advanced techniques for Common Lisp |publisher=Prentice Hall |location=Englewood Cliffs, N.J |year=1994 |isbn=0-13-030552-9 }}</ref> ''ANSI Common Lisp'',<ref name="ansi">{{cite book |last=Graham |first=Paul |title=ANSI Common Lisp |publisher=Prentice Hall |location=Englewood Cliffs, N.J |year=1996 |isbn=0-13-370875-6 |url=https://archive.org/details/ansicommonlisp00grah}}</ref> and ''[[Hackers & Painters]]''.<ref name="hackersandpainters">{{cite book |last=Graham |first=Paul |title=Hackers & painters: big ideas from the computer age |publisher=O'Reilly |location=Sebastopol, California |year=2004 |isbn=0-596-00662-4 |url=https://archive.org/details/hackerspaintersb00grah}}</ref> Technology journalist [[Steven Levy]] has described Graham as a "hacker philosopher".<ref>{{Cite magazine |url=https://www.wired.com/story/y-combinator-has-gone-supernova/ |title=Y Combinator Has Gone Supernova |magazine=Wired|last1=Levy |first1=Steven }}</ref> Graham was born in England, where he and his family maintain permanent residence. However he is also a citizen of the United States, where he was educated, lived, and worked until 2016.
+
+
+==Education and early life==
+Graham and his family moved to [[Pittsburgh]], [[Pennsylvania]] in 1968, where he later attended [[Gateway High School (Pennsylvania)|Gateway High School]]. Graham gained interest in science and mathematics from his father who was a [[nuclear physicist]].<ref name=early_interest>
+{{cite web |url=http://www.paulgraham.com/work.html |title=Work |publisher=PaulGraham.com |access-date=28 May 2023}}</ref>
+
+
+Graham received a [[Bachelor of Arts]] in philosophy from [[Cornell University]]<ref name=bio/><ref>[http://www.paulgraham.com/college.html Undergraduation]. ''Paul Graham''. Retrieved 22 July 2011.</ref> (1986).<ref>[http://ezramagazine.cornell.edu/FALL11/Endnote.html EZRA: Cornell's Quarterly Magazine (Fall 2011)] "Paul Graham '86"</ref> He then attended [[Harvard University]], earning [[Master of Science]] (1988) and [[Doctor of Philosophy]] (1990) degrees in [[computer science]].<ref name="bio">{{cite web |url=http://www.paulgraham.com/bio.html |title=Paul Graham biography |publisher=PaulGraham.com |access-date=22 July 2011}}</ref><ref name="SpeakerMix bio">{{cite web |url=http://speakermix.com/paul-graham |title=Paul Graham biography |publisher=SpeakerMix.com |access-date=6 March 2012 |url-status=dead |archive-url=https://web.archive.org/web/20120409224705/http://speakermix.com/paul-graham |archive-date=9 April 2012}}</ref> He has also studied painting at the [[Rhode Island School of Design]] and at the [[Accademia di Belle Arti Firenze|Accademia di Belle Arti]] in [[Florence]].<ref name=bio/><ref name="SpeakerMix bio"/>
+
+
+==Career==
+In 1996, Graham and [[Robert Tappan Morris|Robert Morris]] founded [[Viaweb]] and recruited [[Trevor Blackwell]] shortly after. They believed that Viaweb was the first [[application service provider]].<ref>{{cite web |last1=Graham |first1=Paul |title=Was Viaweb First? |url=http://www.paulgraham.com/first.html?viewfullsite=1 |access-date=19 February 2023}}</ref> Viaweb's software, written mostly in [[Common Lisp]], allowed users to make their own [[Internet store]]s. In the summer of 1998, after [[Jerry Yang]] received a strong recommendation from [[Ali Partovi]],<ref>{{Cite book|last=Jessica.|first=Livingston|url=http://worldcat.org/oclc/705381923|title=Founders at work : stories of startups' early days|date=2010|publisher=Apress|isbn=978-1-4302-1078-8|oclc=705381923}}</ref> Viaweb was sold to [[Yahoo!]] for 455,000 shares of Yahoo! stock, valued at $49.6 million.<ref>{{cite web |url=http://docs.yahoo.com/docs/pr/release184.html |title=Yahoo! to Acquire Viaweb |publisher=Yahoo! Inc |date=8 June 1998 |access-date=14 April 2008 |url-status=dead |archive-url=https://web.archive.org/web/20070701083734/http://docs.yahoo.com/docs/pr/release184.html |archive-date=1 July 2007}}</ref> After the acquisition, the product became [[Yahoo! Store]].
+
+
+Graham later gained notice for his essays, which he posts on his personal website. Essay subjects range from ''Beating the Averages'',<ref>{{cite web |last=Graham |first=Paul |url=http://www.paulgraham.com/avg.html |title=Beating the Averages |website=Paulgraham.com}}</ref> which compares Lisp to other [[programming language]]s and introduced the hypothetical programming language ''Blub'', to ''Why Nerds are Unpopular'',<ref>{{cite web |last=Graham |first=Paul |url=http://paulgraham.com/nerds.html |title=Why Nerds are Unpopular |website=Paulgraham.com}}</ref> a discussion of [[nerd]] life in high school. A collection of his essays has been published as ''[[Hackers & Painters]]''<ref name="hackersandpainters"/> by [[O'Reilly Media]], which includes a discussion of the growth of Viaweb and what Graham perceives to be the advantages of Lisp to program it.
+
+
+In 2001, Graham announced that he was working on a new [[Dialect (computing)|dialect]] of Lisp named [[Arc (programming language)|Arc]]. It was released on 29 January 2008.<ref>{{cite web |last=Graham |first=Paul |url=http://paulgraham.com/arc0.html |title=Arc's Out |date=29 January 2008 |website=Paulgraham.com |access-date=2020-04-09}}</ref> Over the years since, he has written several essays describing features or goals of the language, and some internal projects at Y Combinator have been written in Arc, most notably the Hacker News web forum and news aggregator program.
+
+
+In 2005, after giving a talk at the Harvard Computer Society later published as ''How to Start a Startup'', Graham along with [[Trevor Blackwell]], [[Jessica Livingston]], and [[Robert Tappan Morris|Robert Morris]] started [[Y Combinator]] to provide [[seed funding]] to a large number of [[Startup company|startups]], particularly those started by younger, more technically oriented founders. Y Combinator has now invested in more than 1300 startups, including [[Reddit]], [[Justin.tv]], [[Xobni]], [[Dropbox (service)|Dropbox]], [[Airbnb]] and [[Stripe (company)|Stripe]].<ref>{{cite web |url=http://ycuniverse.com/ycombinator-companies |title=Y Combinator Companies |website=Y Combinator Universe |date=April 2020 |access-date=9 April 2020}}</ref>
+
+
+''[[BusinessWeek]]'' included Paul Graham in the 2008 edition of its annual feature, ''The 25 Most Influential People on the Web''.<ref>{{cite web |url=http://images.businessweek.com/ss/08/09/0929_most_influential/7.htm |title=The Papa Bear: Paul Graham |website=Bloomberg BusinessWeek |date=29 September 2008 |access-date=29 September 2008 |archive-date=24 April 2012 |archive-url=https://web.archive.org/web/20120424120241/http://images.businessweek.com/ss/08/09/0929_most_influential/7.htm |url-status=dead }}</ref>
+
+
+In response to the proposed [[Stop Online Piracy Act]] (SOPA), Graham announced in late 2011 that no representatives of any company supporting it would be invited to Y Combinator's Demo Day events.<ref name="Demo Day SOPA cutoff">{{cite news |last=Tsotsis |first=Alexia |title=Paul Graham: SOPA Supporting Companies No Longer Allowed at YC Demo Day |url=https://techcrunch.com/2011/12/22/paul-graham-sopa-supporting-companies-no-longer-allowed-at-yc-demo-day/ |website=[[TechCrunch]] |date=22 December 2011 |access-date=23 December 2011}}</ref>
+
+
+In February 2014, Graham stepped down from his day-to-day role at Y Combinator.{{Citation needed|date=July 2021}}
+
+
+In October 2019, Graham announced a [[Technical specification|specification]] for another new dialect of Lisp, written in itself, named Bel.<ref>{{Cite web|title=Bel|url=http://www.paulgraham.com/bel.html|access-date=2021-09-26|website=paulgraham.com|first=Paul|last=Graham|year=2019}}</ref>
+
+
+===<span id="Graham's Hierarchy of Disagreement"></span> Graham's hierarchy of disagreement===
+[[File:Graham's Hierarchy of Disagreement-en.svg|right|thumb|upright=1.8|Graham's hierarchy of disagreement]]
+Graham proposed a disagreement hierarchy in a 2008 essay ''How to Disagree'',<ref>{{cite web |url=http://www.paulgraham.com/disagree.html |title=How to Disagree |publisher=PaulGraham.com |last=Graham |first=Paul |date=March 2008 |access-date=2 May 2011}}</ref> putting types of [[argument]] into a seven-point hierarchy and observing that "If moving up the disagreement hierarchy makes people less mean, that will make most of them happier." Graham also suggested that the hierarchy can be thought of as a pyramid, as the highest forms of disagreement are rarer.
+
+
+Following this hierarchy, Graham notes that articulate forms of name-calling (e.g., "The author is a self-important dilettante") are no different from crude insults.
+
+
+The hierarchy of disagreement is used on [[English Wikipedia]] as a guide for constructive dispute resolution.<ref>"[https://meta.wikimedia.org/wiki/Research:Newsletter/2022/December Wikimedia News Research Letter]", Vol: 12 Issue: 12 December 2022, wikimedia.org.</ref>
+
+
+===<span id="Blub"></span> The Blub paradox===
+Graham considers the hierarchy of [[programming language]]s with the example of ''Blub'', a hypothetically average language "right in the middle of the abstractness continuum. It is not the most powerful language, but it is more powerful than [[COBOL|Cobol]] or [[machine code|machine language]]."<ref>{{cite web |last=Graham |first=Paul |year=2001 |url=http://www.paulgraham.com/avg.html |title=Beating the Averages |access-date=28 April 2007}}; published in ''[[Hackers & Painters]]'', 2004; the essay was also reprinted in [http://act-r.psy.cmu.edu/people/douglass/Douglass/Agents/Lisp/psflang-report.pdf ''The Planning and Scheduling Working Group Report on Programming Languages''] {{webarchive|url=https://web.archive.org/web/20110616195448/http://act-r.psy.cmu.edu/people/douglass/Douglass/Agents/Lisp/psflang-report.pdf |date=16 June 2011}}, by JM Adams, R Hawkins, C Myers, C Sontag, S Speck</ref> It was used by Graham to illustrate a comparison, beyond [[Turing completeness]], of programming language power, and more specifically to illustrate the difficulty of comparing a programming language one knows to one that one does not.{{Quote |text=...These studies would like to formally prove that a certain language is more or less expressive than another language. Determining such a relation between languages objectively rather than subjectively seems to be somewhat problematic, a phenomenon that Paul Graham has discussed in "The Blub Paradox".<ref name="blub1">{{cite web |last=Robinson |first=D. |url=http://www.verilab.com/files/sample_chapter_verilab_aop_cookbook.pdf |title=An Introduction to Aspect Oriented Programming in e |website=Verilab}}</ref><ref name="blub2">{{cite web |last1=Hidders |first1=J. |last2=Paredaens |first2=J. |last3=Vercammen |first3=R. |last4=Marrara |first4=S. |url=http://www.adrem.ua.ac.be/bibrem/pubs/TR2005-05.pdf |title=Expressive power of recursion and aggregates in XQuery |website=Adrem Data Lab |publisher=University of Antwerp}}</ref>}}
+
+
+Graham considers a hypothetical Blub programmer. When the programmer looks down the "power continuum", they consider the lower languages to be less powerful because they miss some feature that a Blub programmer is used to. But when they look up, they fail to realise that they are looking up: they merely see "weird languages" with unnecessary features and assumes they are equivalent in power, but with "other hairy stuff thrown in as well". When Graham considers the point of view of a programmer using a language higher than Blub, he describes that programmer as looking down on Blub and noting its "missing" features from the point of view of the higher language.<ref name="blub1"/>
+
+
+Graham describes this as ''the Blub paradox'' and concludes that "By induction, the only programmers in a position to see all the differences in power between the various languages are those who understand the most powerful one."<ref name="blub1"/>
+
+
+The concept has been cited by programmers such as [[Joel Spolsky]].<ref>{{Cite book |last=Spolsky |first=Joel |author-link=Joel Spolsky |url=http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html |chapter=The Perils of JavaSchools |title=More Joel on Software |date=29 December 2005}}</ref>
+
+
+==Personal life==
+In 2008, Graham married [[Jessica Livingston]].<ref>{{cite web |url=http://arclanguage.org/item?id=8509 |title=Where are we going? |publisher=Arclanguage.org  |date=26 October 2008 |access-date=14 November 2008}}</ref><ref>{{cite web |url=http://news.ycombinator.com/item?id=205918 |title=Congrats to PG on getting hitched |access-date=14 November 2008 |date=2 June 2008 |publisher=news.ycombinator.com}}</ref><ref>{{cite web |url=http://ycombinator.com/ycca.html |title=California Year-Round |website=[[Y Combinator]] |last=Graham |first=Paul |date=January 2009 |quote=Jessica Livingston and I (who are married despite our different last names) are expecting our first child any day now. |url-status=dead |archive-url=https://web.archive.org/web/20120313150959/http://ycombinator.com/ycca.html |archive-date=13 March 2012}}</ref> They have two children, and have been living in England since 2016.<ref>{{cite tweet|number=1250041502270717952|user=paulg|title=@OconHQ We live in England.|date=14 April 2020}}</ref><ref>{{Cite tweet|number=1618388517322895361|user=paulg|title=Yep, since 2016.|author=Paul Graham|date=25 January 2023}}</ref>
+
+
+==References==
+{{Reflist}}
+
+
+==External links==
+{{external links|date=September 2019}}
+{{Wikiquote|Paul Graham}}
+* [http://www.inc.com/magazine/20090601/the-start-up-guru-y-combinators-paul-graham.html ''Inc.'' magazine profile]
+* [http://www.itconversations.com/shows/detail657.html Audio: What Business Can Learn From Open Source]
+* [https://www.youtube.com/watch?v=q7K0vRUKXKc Video: "Be Good": Paul Graham at Startup School 08]
+* [https://web.archive.org/web/20030421131304/http://www.infoworld.com/article/02/08/20/020822opsecrets_1.html Paul Graham provides stunning answer to spam e-mails]
+* [https://techcrunch.com/2006/09/02/an-interview-with-vc-paul-graham-of-ycombinator/ Techcrunch interview]
+* {{cite web |last=Roberts |first=Russ |author-link=Russ Roberts |title=Graham on Start-ups, Innovation, and Creativity |url=http://www.econtalk.org/archives/_featuring/paul_graham/ |website=[[EconTalk]] |publisher=[[Library of Economics and Liberty]] |date=3 August 2009}}
+* [http://www.paulgraham.com/hundred.html The Hundred-Year Language], an essay
+* [https://web.archive.org/web/20170515090437/https://gigster.com/resources/pg-essays Paul Graham's essays in all languages]
+
+
+{{Lisp programming language}}
+{{Y Combinator}}
+{{Authority control}}
+
+
+{{DEFAULTSORT:Graham, Paul}}
+[[Category:1964 births]]
+[[Category:Living people]]
+[[Category:Lisp (programming language) people]]
+[[Category:English computer programmers]]
+[[Category:American computer programmers]]
+[[Category:American software engineers]]
+[[Category:Cornell University alumni]]
+[[Category:Businesspeople in information technology]]
+[[Category:Businesspeople in software]]
+[[Category:Harvard University alumni]]
+[[Category:American technology writers]]
+[[Category:O'Reilly writers]]
+[[Category:Programming language designers]]
+[[Category:American technology company founders]]
+[[Category:American computer businesspeople]]
+[[Category:Yahoo! employees]]
+[[Category:British company founders]]
+[[Category:Y Combinator people]]
+[[Category:People from Weymouth, Dorset]]
+[[Category:People from Pittsburgh]]
