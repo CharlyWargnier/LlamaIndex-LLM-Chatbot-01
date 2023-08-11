@@ -13,12 +13,11 @@ nltk.download('punkt')
 # Streamlit app layout
 st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis")
 
-
-
-
 data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
 data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
 data3 = "https://helios-i.mashable.com/imagery/articles/05SzGlYqpD4cUlIaQ8DHdVF/hero-image.fill.size_1200x1200.v1666999270.jpg"
+
+api_key = st.text_input("Enter your OPENAI_API_KEY", type="password")
 
 img = image_select(
     label="Choose a tech personality",
@@ -57,9 +56,6 @@ if user_input and len(user_input.split()) < 3:
 else:
 
     # Set the OpenAI API key
-
-    api_key = st.text_input("Enter your OPENAI_API_KEY", type="password")
-
     if api_key:
         # os.environ['OPENAI_API_KEY'] = api_key
         openai.api_key = api_key
