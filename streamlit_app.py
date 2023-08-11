@@ -43,7 +43,7 @@ else:
         text = file.read()
     st.info("📖 You selected the :red[**Elon Musk**]  Wiki")
 
-selected = pills("Prompt ideas", ["What's this Wiki about?", "What's the most interesting fact about this Wiki?", "What controversies has this person faced in his life?"], ["🎈", "🎈", "🎈"])
+selected = pills("Prompt ideas", ["Who's this Wiki about?", "What's the most interesting fact about this Wiki?", "What controversies has this person faced in his life?"], ["🎈", "🎈", "🎈"])
 
 # st.caption('Copy prompt')
 st.code(selected)
