@@ -61,7 +61,9 @@ else:
     api_key = st.text_input("Enter your OPENAI_API_KEY", type="password")
 
     if api_key:
-        os.environ['OPENAI_API_KEY'] = api_key
+        # os.environ['OPENAI_API_KEY'] = api_key
+        openai.api_key = api_key
+
 
     # Create the ServiceContext using the OpenAI llm
     service_context = ServiceContext.from_defaults(llm=OpenAI())
