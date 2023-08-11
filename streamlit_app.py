@@ -53,7 +53,9 @@ if user_input and len(user_input.split()) < 3:
     st.error("Your message is too short. Please enter at least 3 words.")
 else:
     # Set the OpenAI API key
-    openai.api_key = "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"
+    
+    os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+
 
     #os.environ['OPENAI_API_KEY'] = st.secrets['openai']['OPENAI_API_KEY']
     #openai.api_key = os.environ['OPENAI_API_KEY']
