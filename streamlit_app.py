@@ -24,24 +24,21 @@ img = image_select(
 )
 
 if img == data:
-
-    # Specify the file path
-    text = 'Jeff_Bezos.txt'
-
-    # Read the file
+    text = 'Paul_Graham.txt'
     with open(text, 'r') as file:
         text = file.read()
-
-    #text = db.storage.text.get(key="paul-graham-long-txt")
     st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
 elif img == data2:
-    # text = db.storage.text.get(key="jordan-txt")
-    text = db.storage.text.get(key="jeff-bezos-txt")
+    text = 'Jeff_Bezos.txt'
+    with open(text, 'r') as file:
+        text = file.read()
     st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
 
 else:
-    text = db.storage.text.get(key="elon-musk-txt")
+    text = 'Elon_Musk.txt'
+    with open(text, 'r') as file:
+        text = file.read()
     st.info("📖 You selected the :red[**Elon Musk**]  Wiki")
 
 selected = pills("Prompt ideas", ["What's this Wiki about?", "What's the most interesting fact about this Wiki?", "What controversies has this person faced in his life?"], ["🎈", "🎈", "🎈"])
