@@ -26,7 +26,7 @@ if api_key:
     openai.api_key = api_key
 else:
     st.error("👈 Please enter a valid OpenAI API key.")
-    st.stop()
+    # st.stop()
 
 
 img = image_select(
