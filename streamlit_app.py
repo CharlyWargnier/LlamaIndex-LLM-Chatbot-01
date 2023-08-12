@@ -73,7 +73,16 @@ data = [Document(text=text)]
 index = VectorStoreIndex.from_documents(data, service_context=service_context)
 
 # Configure chat engine
-chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
+# chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
+
+chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
+chat_engine._context_template = (
+    "Context information from the wiki is below."
+    "\n--------------------\n"
+    "{context_str}"
+    "\n--------------------\n"
+)
+
 
 if user_input:
     with st.chat_message("user"):
