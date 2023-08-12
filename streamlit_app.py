@@ -46,7 +46,7 @@ else:
     st.info("📖 You selected the :red[**Elon Musk**]  Wiki")
 
 with st.expander("Click to view the selected Wiki"):
-    st.text(text_content)
+    st.text(text)
 
 selected = pills("Prompt ideas", ["Who's this Wiki about?", "What's the most interesting fact about this Wiki?", "What controversies has this person faced in his life?"], ["🎈", "🎈", "🎈"])
 
