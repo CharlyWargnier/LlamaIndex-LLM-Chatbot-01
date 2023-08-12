@@ -32,7 +32,7 @@ if img == data:
     st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
 elif img == data2:
-    text = 'Jeff_Bezos.txt'
+    text = 'Mark_Zuckerberg.txt'
     with open(text, 'r') as file:
         text = file.read()
     st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
