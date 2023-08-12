@@ -7,8 +7,21 @@ from streamlit_image_select import image_select
 import time
 from streamlit_pills import pills
 
-import nltk
-nltk.download('punkt')
+import ssl
+
+# import nltk
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+# nltk.download("punkt")
+
+# import nltk
+# nltk.download('punkt')
 
 st.set_page_config(page_title="LlamaIndex Chatbot with Celebrity Wikis", page_icon="🦙")
 
@@ -36,27 +49,35 @@ img = image_select(
 )
 
 if img == data:
-    text = 'Paul_Graham.txt'
-    with open(text, 'r') as file:
+    text = "Paul_Graham.txt"
+    with open(text, "r") as file:
         text = file.read()
     st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
 elif img == data2:
-    text = 'Jeff_Bezos.txt'
-    with open(text, 'r') as file:
+    text = "Jeff_Bezos.txt"
+    with open(text, "r") as file:
         text = file.read()
     st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
 
 else:
-    text = 'Elon_Musk.txt'
-    with open(text, 'r') as file:
+    text = "Elon_Musk.txt"
+    with open(text, "r") as file:
         text = file.read()
     st.info("📖 You selected the :red[**Elon Musk**]  Wiki")
 
 with st.expander("Click to view the selected Wiki"):
     st.text(text)
 
-selected = pills("Prompt ideas", ["Who's this Wiki about?", "What's the most interesting fact about this Wiki?", "What controversies has this person faced in his life?"], ["🎈", "🎈", "🎈"])
+selected = pills(
+    "Prompt ideas",
+    [
+        "Who's this Wiki about?",
+        "What's the most interesting fact about this Wiki?",
+        "What controversies has this person faced in his life?",
+    ],
+    ["🎈", "🎈", "🎈"],
+)
 
 # st.caption('Copy prompt')
 st.code(selected)
@@ -73,16 +94,16 @@ data = [Document(text=text)]
 index = VectorStoreIndex.from_documents(data, service_context=service_context)
 
 # Configure the chat engine
-chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
+# chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
 
 # Yi's suggestions on the new LlamaIndex 0.80
-# chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
-# chat_engine._context_template = (
-#    "Context information from the wiki is below."
-#    "\n--------------------\n"
-#    "{context_str}"
-#    "\n--------------------\n"
-#)
+chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
+chat_engine._context_template = (
+    "Context information from the wiki is below."
+    "\n--------------------\n"
+    "{context_str}"
+    "\n--------------------\n"
+)
 
 
 if user_input:
