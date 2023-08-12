@@ -25,7 +25,7 @@ api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
 if api_key:
     openai.api_key = api_key
 else:
-    st.sidebar.warning("👈 Please enter a valid OpenAI API key.")
+    st.sidebar.warning("👆  Please enter a valid OpenAI API key.")
     # st.stop()
 
 
