@@ -11,7 +11,7 @@ import nltk
 nltk.download('punkt')
 
 # Streamlit app layout
-st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis")
+st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis!")
 
 data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
 data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
