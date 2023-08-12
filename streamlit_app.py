@@ -31,6 +31,8 @@ if img == data:
     text = 'Paul_Graham.txt'
     with open(text, 'r') as file:
         text = file.read()
+    with st.expander("See wiki text"):
+        st.write(text)
     st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
 elif img == data2:
