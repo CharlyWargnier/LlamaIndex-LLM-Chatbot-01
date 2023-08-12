@@ -62,10 +62,11 @@ else:
 
     # Set the OpenAI API key
     if api_key:
-        # os.environ['OPENAI_API_KEY'] = api_key
         openai.api_key = api_key
-
-
+    else:
+        st.error("Please enter a valid OpenAI API key.")  # Error message when the key is not provided
+        st.stop()  # Stop the execution of the rest of the script
+    
     # Create the ServiceContext using the OpenAI llm
     service_context = ServiceContext.from_defaults(llm=OpenAI())
 
