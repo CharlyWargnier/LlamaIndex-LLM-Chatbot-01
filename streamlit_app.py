@@ -19,7 +19,15 @@ data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
 data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
 data3 = "https://helios-i.mashable.com/imagery/articles/05SzGlYqpD4cUlIaQ8DHdVF/hero-image.fill.size_1200x1200.v1666999270.jpg"
 
-api_key = st.text_input("Enter your OPENAI_API_KEY", type="password")
+api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
+
+
+if api_key:
+    openai.api_key = api_key
+else:
+    st.error("👈 Please enter a valid OpenAI API key.")
+    st.stop()
+
 
 img = image_select(
     label="Choose a tech personality",
@@ -55,35 +63,23 @@ st.code(selected)
 
 user_input = st.chat_input("Ask something about this Wiki:")
 
-# Check if user input is less than 100 words
-if user_input and len(user_input.split()) < 3:
-    st.error("Your message is too short. Please enter at least 3 words.")
-else:
+# Create the ServiceContext using the OpenAI llm
+service_context = ServiceContext.from_defaults(llm=OpenAI())
 
-    # Set the OpenAI API key
-    if api_key:
-        openai.api_key = api_key
-    else:
-        st.error("Please enter a valid OpenAI API key.")  # Error message when the key is not provided
-        st.stop()  # Stop the execution of the rest of the script
-    
-    # Create the ServiceContext using the OpenAI llm
-    service_context = ServiceContext.from_defaults(llm=OpenAI())
+# Convert the text into a suitable format for your index (e.g., a list of documents)
+data = [Document(text=text)]
 
-    # Convert the text into a suitable format for your index (e.g., a list of documents)
-    data = [Document(text=text)]
+# Load data and build index
+index = VectorStoreIndex.from_documents(data, service_context=service_context)
 
-    # Load data and build index
-    index = VectorStoreIndex.from_documents(data, service_context=service_context)
+# Configure chat engine
+chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
 
-    # Configure chat engine
-    chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
+if user_input:
+    with st.chat_message("user"):
+        st.write(user_input)
 
-    if user_input:
-        with st.chat_message("user"):
-            st.write(user_input)
-
-        # stream = chat_engine.astream_chat(user_input)
-        response = chat_engine.chat(user_input)
-        with st.chat_message("assistant"):
-            st.info(response)
+    # stream = chat_engine.astream_chat(user_input)
+    response = chat_engine.chat(user_input)
+    with st.chat_message("assistant"):
+        st.info(response)
