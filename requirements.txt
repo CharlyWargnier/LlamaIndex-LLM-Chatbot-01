@@ -1,6 +1,6 @@
 streamlit
 openai
-llama-index
+llama-index==0.7.19
 streamlit-image-select
 streamlit-pills
 nltk
