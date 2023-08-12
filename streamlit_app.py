@@ -75,8 +75,9 @@ selected = pills(
         "Who's this Wiki about?",
         "What's the most interesting fact about this Wiki?",
         "What controversies has this person faced in his life?",
+        "how many times the person in this wiki was married?",
     ],
-    ["🎈", "🎈", "🎈"],
+    ["🎈", "🎈", "🎈", "🎈"],
 )
 
 # st.caption('Copy prompt')
