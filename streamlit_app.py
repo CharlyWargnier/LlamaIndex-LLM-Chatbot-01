@@ -10,6 +10,8 @@ from streamlit_pills import pills
 import nltk
 nltk.download('punkt')
 
+st.set_page_config(page_title="LlamaIndex Chatbot with Celebrity Wikis", page_icon="🦙")
+
 # Streamlit app layout
 st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis!")
 
