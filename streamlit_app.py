@@ -1,15 +1,24 @@
+# Streamlit
 import streamlit as st
+
+# OpenAI - Library for interacting with OpenAI's services
+import openai
+
+# Llama Index
 from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
-import openai
-from PIL import Image
+
+# Streamlit Image Selection Component
 from streamlit_image_select import image_select
-import time
+
+# PIL - Python Imaging Library, for working with images
+from PIL import Image
+
+# Streamlit Pills Component
 from streamlit_pills import pills
 
 import ssl
 
-# import nltk
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -23,10 +32,13 @@ else:
 # import nltk
 # nltk.download('punkt')
 
-st.set_page_config(page_title="LlamaIndex Chatbot with Celebrity Wikis", page_icon="🦙")
+st.set_page_config(
+    page_title="LlamaIndex Chatbot: Chat with Celebrity Wikis!", page_icon="🦙"
+)
 
 # Streamlit app layout
-st.header("🦙 LlamaIndex Chatbot with Celebrity Wikis!")
+st.subheader("🦙 LlamaIndex Chatbot: Chat with Celebrity Wikis!")
+st.subheader("")
 
 data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
 data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
@@ -39,8 +51,6 @@ if api_key:
     openai.api_key = api_key
 else:
     st.sidebar.warning("👆  Please enter a valid OpenAI API key.")
-    # st.stop()
-
 
 img = image_select(
     label="Choose a tech personality",
@@ -94,9 +104,6 @@ data = [Document(text=text)]
 # Load data and build index
 index = VectorStoreIndex.from_documents(data, service_context=service_context)
 
-# Configure the chat engine
-# chat_engine = index.as_chat_engine(chat_mode="react", verbose=True, streaming=True)
-
 # Yi's suggestions on the new LlamaIndex 0.80
 chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
 chat_engine._context_template = (
@@ -106,12 +113,10 @@ chat_engine._context_template = (
     "\n--------------------\n"
 )
 
-
 if user_input:
     with st.chat_message("user"):
         st.write(user_input)
 
-    # stream = chat_engine.astream_chat(user_input)
     response = chat_engine.chat(user_input)
     with st.chat_message("assistant"):
         st.info(response)
