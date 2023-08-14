@@ -42,10 +42,9 @@ st.subheader("")
 
 data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
 data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
-data3 = "https://helios-i.mashable.com/imagery/articles/05SzGlYqpD4cUlIaQ8DHdVF/hero-image.fill.size_1200x1200.v1666999270.jpg"
+data3 = "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
 
 api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
-
 
 if api_key:
     openai.api_key = api_key
@@ -55,7 +54,7 @@ else:
 img = image_select(
     label="Choose a tech personality",
     images=[data, data2, data3],
-    captions=["Paul Graham", "Jeff Bezos", "Elon Musk"],
+    captions=["Paul Graham", "Jeff Bezos", "Satya Nadella"],
 )
 
 if img == data:
@@ -71,10 +70,10 @@ elif img == data2:
     st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
 
 else:
-    text = "Elon_Musk.txt"
+    text = "Satya_Nadella.txt"
     with open(text, "r") as file:
         text = file.read()
-    st.info("📖 You selected the :red[**Elon Musk**]  Wiki")
+    st.info("📖 You selected the :red[**Satya Nadella**]  Wiki")
 
 with st.expander("Click to view the selected Wiki"):
     st.write(text)
@@ -82,15 +81,13 @@ with st.expander("Click to view the selected Wiki"):
 selected = pills(
     "Prompt ideas",
     [
-        "Who's this Wiki about?",
-        "What's the most interesting fact about this Wiki?",
-        "What controversies has this person faced in his life?",
-        "How many times the person in this wiki was married?",
+        "In November 2022, who received Bezos' $100-million Courage and Civility Award for children's literacy work?",
+        "In September 2022, where was Jeff Bezos ranked on the Forbes 400 list and what was his net worth?",
+        "In 2022, which high-ranking civilian award was Satya Nadella honored with by the Government of India?",
     ],
-    ["🎈", "🎈", "🎈", "🎈"],
+    ["🎈", "🎈", "🎈"],
 )
 
-# st.caption('Copy prompt')
 st.code(selected)
 
 user_input = st.chat_input("Ask something about this Wiki:")
