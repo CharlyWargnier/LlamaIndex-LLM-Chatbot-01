@@ -84,7 +84,7 @@ selected = pills(
         "In November 2022, who received Bezos' $100-million Courage and Civility Award for children's literacy work?",
         "In September 2022, where was Jeff Bezos ranked on the Forbes 400 list and what was his net worth?",
     ],
-    ["🎈", "🎈", "🎈"],
+    ["🎈", "🎈"],
 )
 
 st.code(selected)
