@@ -32,87 +32,95 @@ else:
 # import nltk
 # nltk.download('punkt')
 
-st.set_page_config(
-    page_title="LlamaIndex Chatbot: Chat with Celebrity Wikis!", page_icon="🦙"
-)
+try:
+    st.set_page_config(
+        page_title="LlamaIndex Chatbot: Chat with Celebrity Wikis!", page_icon="🦙"
+    )
 
-# Streamlit app layout
-st.subheader("🦙 LlamaIndex Chatbot: Chat with Celebrity Wikis!")
-st.subheader("")
+    # Streamlit app layout
+    st.subheader("🦙 LlamaIndex Chatbot: Chat with Celebrity Wikis!")
+    st.subheader("")
 
-data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
-data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
-data3 = "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+    data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
+    data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
+    data3 = "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
 
-api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
+    api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
 
-if api_key:
-    openai.api_key = api_key
-else:
-    st.sidebar.warning("👆  Please enter a valid OpenAI API key.")
+    if api_key:
+        openai.api_key = api_key
+    else:
+        st.sidebar.warning("👆  Please enter a valid OpenAI API key.")
 
-img = image_select(
-    label="Choose a tech personality",
-    images=[data, data2, data3],
-    captions=["Paul Graham", "Jeff Bezos", "Satya Nadella"],
-)
+    img = image_select(
+        label="Choose a tech personality",
+        images=[data, data2, data3],
+        captions=["Paul Graham", "Jeff Bezos", "Satya Nadella"],
+    )
 
-if img == data:
-    text = "Paul_Graham.txt"
-    with open(text, "r") as file:
-        text = file.read()
-    st.info("📖 You selected the :red[**Paul Graham**] Wiki")
+    if img == data:
+        text = "Paul_Graham.txt"
+        with open(text, "r") as file:
+            text = file.read()
+        st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
-elif img == data2:
-    text = "Jeff_Bezos.txt"
-    with open(text, "r") as file:
-        text = file.read()
-    st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
+    elif img == data2:
+        text = "Jeff_Bezos.txt"
+        with open(text, "r") as file:
+            text = file.read()
+        st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
 
-else:
-    text = "Satya_Nadella.txt"
-    with open(text, "r") as file:
-        text = file.read()
-    st.info("📖 You selected the :red[**Satya Nadella**]  Wiki")
+    else:
+        text = "Satya_Nadella.txt"
+        with open(text, "r") as file:
+            text = file.read()
+        st.info("📖 You selected the :red[**Satya Nadella**]  Wiki")
 
-with st.expander("Click to view the selected Wiki"):
-    st.write(text)
+    with st.expander("Click to view the selected Wiki"):
+        st.write(text)
 
-selected = pills(
-    "Prompt suggestions",
-    [
-        "What happened to Jeff Bezos in September 2022?",
-        "What happened to Satya Nadella in November 2022?",
-    ],
-    ["🎈", "🎈"],
-)
+    selected = pills(
+        "Prompt suggestions",
+        [
+            "What happened to Jeff Bezos in September 2022?",
+            "What happened to Satya Nadella in November 2022?",
+        ],
+        ["🎈", "🎈"],
+    )
 
-st.code(selected)
+    st.code(selected)
 
-user_input = st.chat_input("Ask something about this Wiki:")
+    user_input = st.chat_input("Ask something about this Wiki:")
 
-# Create the ServiceContext using the OpenAI llm
-service_context = ServiceContext.from_defaults(llm=OpenAI())
+    # Create the ServiceContext using the OpenAI llm
+    service_context = ServiceContext.from_defaults(llm=OpenAI())
 
-# Convert the text into a suitable format for your index (e.g., a list of documents)
-data = [Document(text=text)]
+    # Convert the text into a suitable format for your index (e.g., a list of documents)
+    data = [Document(text=text)]
 
-# Load data and build index
-index = VectorStoreIndex.from_documents(data, service_context=service_context)
+    # Load data and build index
+    index = VectorStoreIndex.from_documents(data, service_context=service_context)
 
-# Yi's suggestions on the new LlamaIndex 0.80
-chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
-chat_engine._context_template = (
-    "Context information from the wiki is below."
-    "\n--------------------\n"
-    "{context_str}"
-    "\n--------------------\n"
-)
+    # Yi's suggestions on the new LlamaIndex 0.80
+    chat_engine = index.as_chat_engine(chat_mode="context", verbose=True, streaming=True)
+    chat_engine._context_template = (
+        "Context information from the wiki is below."
+        "\n--------------------\n"
+        "{context_str}"
+        "\n--------------------\n"
+    )
 
-if user_input:
-    with st.chat_message("user"):
-        st.write(user_input)
+    if user_input:
+        with st.chat_message("user"):
+            st.write(user_input)
 
-    response = chat_engine.chat(user_input)
-    with st.chat_message("assistant"):
-        st.info(response)
+        response = chat_engine.chat(user_input)
+        with st.chat_message("assistant"):
+            st.info(response)
+
+
+except ValueError as e:  # Catching specific ValueError
+    st.error(f"An error occurred: {str(e)}")
+
+except Exception as e:  # Generic exception handling
+    st.error("An unexpected error occurred. Please check the logs for details.")
