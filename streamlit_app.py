@@ -79,11 +79,10 @@ with st.expander("Click to view the selected Wiki"):
     st.write(text)
 
 selected = pills(
-    "Prompt ideas",
+    "Prompt suggestions",
     [
         "In November 2022, who received Bezos' $100-million Courage and Civility Award for children's literacy work?",
         "In September 2022, where was Jeff Bezos ranked on the Forbes 400 list and what was his net worth?",
-        "In 2022, which high-ranking civilian award was Satya Nadella honored with by the Government of India?",
     ],
     ["🎈", "🎈", "🎈"],
 )
