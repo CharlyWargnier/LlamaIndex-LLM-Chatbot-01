@@ -81,8 +81,8 @@ with st.expander("Click to view the selected Wiki"):
 selected = pills(
     "Prompt suggestions",
     [
-        "In November 2022, who received Bezos' $100-million Courage and Civility Award for children's literacy work?",
-        "In September 2022, where was Jeff Bezos ranked on the Forbes 400 list and what was his net worth?",
+        "What happened to Jeff Bezos in September 2022?",
+        "What happened to Satya Nadella in November 2022?",
     ],
     ["🎈", "🎈"],
 )
