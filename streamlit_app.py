@@ -53,7 +53,7 @@ try:
     col1, col2, col3 = st.columns([0.11, 1, 1])
     with col1:
         arrow = "Images/blue_arrow.jpg"
-        st.image(arrow, width=30)
+        st.image(arrow, width=90)
     
     Sergey_Brin_image = "https://image.cnbcfm.com/api/v1/image/102730650-152766135.jpg?v=1522952646"
     Jeff_Bezos_image = "https://fr.web.img6.acsta.net/pictures/22/08/31/17/40/2573138.jpg"
@@ -109,8 +109,8 @@ try:
     col1, col2, col3 = st.columns([0.11, 1, 1])
     with col1:
         arrow = "Images/blue_arrow.jpg"
-        st.image(arrow, width=30)
-
+        st.image(arrow, width=90)
+        
     user_input = st.chat_input("Ask something about this Wikipedia page:")
 
     # Create the ServiceContext using the OpenAI llm
