@@ -28,7 +28,6 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 
 # nltk.download("punkt")
-
 # import nltk
 # nltk.download('punkt')
 
@@ -37,7 +36,6 @@ try:
         page_title="LlamaIndex Chatbot: Chat with Celebrity Wikis!", page_icon="🦙"
     )
 
-    # Streamlit app layout
     st.subheader("🦙 LlamaIndex Chatbot: Chat with Celebrity Wikis!")
     st.subheader("")
 
@@ -119,8 +117,8 @@ try:
             st.info(response)
 
 
-except ValueError as e:  # Catching specific ValueError
+except ValueError as e:
     st.error(f"An error occurred: {str(e)}")
 
-except Exception as e:  # Generic exception handling
+except Exception as e:
     st.error("An unexpected error occurred. Please check the logs for details.")
