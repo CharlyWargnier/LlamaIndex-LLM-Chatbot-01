@@ -18,7 +18,7 @@ from PIL import Image
 from streamlit_pills import pills
 
 import ssl
-
+import os
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -33,62 +33,85 @@ else:
 
 try:
     st.set_page_config(
-        page_title="LlamaIndex Chatbot: Chat with Celebrity Wikis!", page_icon="🦙"
+        page_title="LlamaIndex Chatbot: Chat with Tech Personalities", page_icon="🦙"
     )
 
-    st.subheader("🦙 LlamaIndex Chatbot: Chat with Celebrity Wikis!")
-    st.subheader("")
+    cols = st.columns([0.25, 3]) # The left column will be 1/4 of the total width, and the right column will be 3/4
+    cols[0].image('https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/6424f01ea4f3051f54dbbd85/oqVQ04b5KiGt5WOWJmYt8.png?w=200&h=200&f=face', width=55)
+    cols[1].caption("")
+    cols[1].markdown("##### A chatbot powered by LlamaIndex for chatting with tech personality wikis.")
 
-    data = "https://www.ycombinator.com/blog/content/images/2022/02/pg.jpg"
-    data2 = "https://static01.nyt.com/images/2021/06/13/books/review/Smith/merlin_126481298_d4afd655-6a72-4f41-b8c8-00f1633315fb-superJumbo.jpg"
-    data3 = "https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+    st.write("")
+    st.write('''
 
-    api_key = st.sidebar.text_input("Enter your OPENAI API KEY", type="password")
+    This demo app uses [LlamaIndex](https://www.llamaindex.ai/) to build an LLM chatbot that can chat with your data. This contrasts with ChatGPT, which has been trained on data [only until 2021](https://bit.ly/3qwUqeQ). With LlamaIndex, you can train your own LLM on your own data, so that it can answer more specific and relevant questions.
+    
+    :blue[**The link to the blog post will be added here as soon as available**].
 
-    if api_key:
-        openai.api_key = api_key
-    else:
-        st.sidebar.warning("👆  Please enter a valid OpenAI API key.")
+    ''')
+
+    col1, col2, col3 = st.columns([0.11, 1, 1])
+    with col1:
+        arrow = "Images/blue_arrow.png"
+        st.image(arrow, width=30)
+    
+    Sergey_Brin_image = "https://image.cnbcfm.com/api/v1/image/102730650-152766135.jpg?v=1522952646"
+    Jeff_Bezos_image = "https://fr.web.img6.acsta.net/pictures/22/08/31/17/40/2573138.jpg"
+    Satya_Nadella_image = "https://content.fortune.com/wp-content/uploads/2022/02/Satya-Nadella-Microsoft-CEO-Most-Admired.jpg"
+
+    # Read API key from Streamlit secrets
+    #if 'OPENAI_API_KEY' in os.environ:
+    openai.api_key = os.environ['OPENAI_API_KEY']
+    #else:
+        #st.sidebar.warning("👆  Please set the OpenAI API key in your Streamlit secrets.")
+        # pass
 
     img = image_select(
-        label="Choose a tech personality",
-        images=[data, data2, data3],
-        captions=["Paul Graham", "Jeff Bezos", "Satya Nadella"],
+        label="① Choose a tech personality",
+        images=[Sergey_Brin_image, Jeff_Bezos_image, Satya_Nadella_image],
+        captions=["Sergey Brin", "Jeff Bezos", "Satya Nadella"]
     )
 
-    if img == data:
-        text = "Paul_Graham.txt"
-        with open(text, "r") as file:
-            text = file.read()
-        st.info("📖 You selected the :red[**Paul Graham**] Wiki")
 
-    elif img == data2:
-        text = "Jeff_Bezos.txt"
-        with open(text, "r") as file:
+
+    if img == Sergey_Brin_image:
+        with open("Sergey_Brin.txt", "r") as file:
             text = file.read()
-        st.info("📖 You selected the :red[**Jeff Bezos**]  Wiki")
+        st.info(f"📖 You selected the **Sergey Brin** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Sergey_Brin) to be queried with LlamadIndex.")
+
+    elif img == Jeff_Bezos_image:
+        with open("Jeff_Bezos.txt", "r") as file:
+            text = file.read()
+        st.info(f"📖 You selected the **Jeff Bezos** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Jeff_Bezos) to be queried with LlamadIndex.")
 
     else:
-        text = "Satya_Nadella.txt"
-        with open(text, "r") as file:
+        with open("Satya_Nadella.txt", "r") as file:
             text = file.read()
-        st.info("📖 You selected the :red[**Satya Nadella**]  Wiki")
+        st.info(f"📖 You selected the **Satya Nadella** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Satya_Nadella) to be queried with LlamadIndex.")
 
-    with st.expander("Click to view the selected Wiki"):
-        st.write(text)
+
+    st.write("")
 
     selected = pills(
-        "Prompt suggestions",
+        "② Select a prompt",
         [
+            "What's Brin net worth as of July 2023?",
             "What happened to Jeff Bezos in September 2022?",
-            "What happened to Satya Nadella in November 2022?",
+            "What recognition did Nadella receive from the Government of India in 2022",
         ],
-        ["🎈", "🎈"],
+        ["🎈", "🎈", "🎈"],
     )
 
-    st.code(selected)
 
-    user_input = st.chat_input("Ask something about this Wiki:")
+    st.code(selected, language="None")
+
+    st.caption('③ Paste that prompt in the chat box')
+    col1, col2, col3 = st.columns([0.11, 1, 1])
+    with col1:
+        arrow = "Images/blue_arrow.png"
+        st.image(arrow, width=30)
+
+    user_input = st.chat_input("Ask something about this Wikipedia page:")
 
     # Create the ServiceContext using the OpenAI llm
     service_context = ServiceContext.from_defaults(llm=OpenAI())
@@ -116,9 +139,5 @@ try:
         with st.chat_message("assistant"):
             st.info(response)
 
-
 except ValueError as e:
     st.error(f"An error occurred: {str(e)}")
-
-except Exception as e:
-    st.error("An unexpected error occurred. Please check the logs for details.")
