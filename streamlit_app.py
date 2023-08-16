@@ -69,17 +69,17 @@ try:
     if img == Sergey_Brin_image:
         with open("Sergey_Brin.txt", "r") as file:
             text = file.read()
-        st.info(f"📖 You selected the **Sergey Brin** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Sergey_Brin) to be queried with LlamadIndex.")
+        st.info(f"📖 You selected the **Sergey Brin** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Sergey_Brin).")
 
     elif img == Jeff_Bezos_image:
         with open("Jeff_Bezos.txt", "r") as file:
             text = file.read()
-        st.info(f"📖 You selected the **Jeff Bezos** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Jeff_Bezos) to be queried with LlamadIndex.")
+        st.info(f"📖 You selected the **Jeff Bezos** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Jeff_Bezos).")
 
     else:
         with open("Satya_Nadella.txt", "r") as file:
             text = file.read()
-        st.info(f"📖 You selected the **Satya Nadella** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Satya_Nadella) to be queried with LlamadIndex.")
+        st.info(f"📖 You selected the **Satya Nadella** Wiki. We scraped this data from his [Wikipedia page](https://en.wikipedia.org/wiki/Satya_Nadella).")
 
 
     st.write("")
