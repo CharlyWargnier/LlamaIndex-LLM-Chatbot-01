@@ -33,13 +33,13 @@ else:
 
 try:
     st.set_page_config(
-        page_title="LlamaIndex Chatbot: Chat with Tech Personalities", page_icon="🦙"
+        page_title="Chat with Wikipedia using LlamaIndex", page_icon="🦙"
     )
 
     cols = st.columns([0.4, 3]) # The left column will be 1/4 of the total width, and the right column will be 3/4
     cols[0].image('https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/6424f01ea4f3051f54dbbd85/oqVQ04b5KiGt5WOWJmYt8.png?w=200&h=200&f=face', width=70)
     #cols[1].caption("")
-    cols[1].header("Chat with Wikipedia using LLamaIndex")
+    cols[1].header("Chat with Wikipedia using LlamaIndex")
 
     st.write('''
 
