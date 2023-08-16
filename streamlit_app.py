@@ -36,24 +36,16 @@ try:
         page_title="LlamaIndex Chatbot: Chat with Tech Personalities", page_icon="🦙"
     )
 
-    cols = st.columns([0.25, 3]) # The left column will be 1/4 of the total width, and the right column will be 3/4
-    cols[0].image('https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/6424f01ea4f3051f54dbbd85/oqVQ04b5KiGt5WOWJmYt8.png?w=200&h=200&f=face', width=55)
-    cols[1].caption("")
-    cols[1].markdown("##### A chatbot powered by LlamaIndex for chatting with tech personality wikis.")
+    cols = st.columns([0.4, 3]) # The left column will be 1/4 of the total width, and the right column will be 3/4
+    cols[0].image('https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/6424f01ea4f3051f54dbbd85/oqVQ04b5KiGt5WOWJmYt8.png?w=200&h=200&f=face', width=70)
+    #cols[1].caption("")
+    cols[1].header("Chat with Wikipedia using LLamaIndex")
 
-    st.write("")
     st.write('''
 
     This demo app uses [LlamaIndex](https://www.llamaindex.ai/) to build an LLM chatbot that can chat with your data. This contrasts with ChatGPT, which has been trained on data [only until 2021](https://bit.ly/3qwUqeQ). With LlamaIndex, you can train your own LLM on your own data, so that it can answer more specific and relevant questions.
-    
-    :blue[**The link to the blog post will be added here as soon as available**].
-
     ''')
 
-    col1, col2, col3 = st.columns([0.11, 1, 1])
-    with col1:
-        arrow = "Images/blue_arrow.jpg"
-        st.image(arrow, width=90)
     
     Sergey_Brin_image = "https://image.cnbcfm.com/api/v1/image/102730650-152766135.jpg?v=1522952646"
     Jeff_Bezos_image = "https://fr.web.img6.acsta.net/pictures/22/08/31/17/40/2573138.jpg"
