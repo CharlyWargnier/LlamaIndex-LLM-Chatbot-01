@@ -1,7 +1,10 @@
 streamlit
 openai
+
+llama-index
 # llama-index==0.7.19
-llama-index==0.7.17
+# 0.7.17 used to work
+# llama-index==0.7.17
 streamlit-image-select
 streamlit-pills
 nltk
